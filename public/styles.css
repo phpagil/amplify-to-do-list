@@ -25,7 +25,7 @@ html {
   }
   
   #heading {
-    background-color: #68b8c1;
+    background-color:#2a8a92;
     text-align: center;
   }
   
@@ -89,6 +89,9 @@ html {
   select {
     height:30px;
     width:10%;
+    border: 1px solid #ccc;
+    box-shadow: rgb(0,0,0,0.75);
+    border-radius:5px;
   }
   
   table {
