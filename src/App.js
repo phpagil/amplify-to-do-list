@@ -78,10 +78,15 @@ const theme = {
     fontSize: "1.1em"
 
   },
+  input: {
+    ...AmplifyTheme.input,
+    marginTop: "3px"
+
+  },
   inputLabel: {
     ...AmplifyTheme.inputLabel,
     marginTop: "10px",
-    marginBottom: "5px",
+    marginBottom: "2px",
     fontSize: "0.9em"
   },
   hint: {
