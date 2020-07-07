@@ -5,8 +5,9 @@ export const getTodo = /* GraphQL */ `
   query GetTodo($id: ID!) {
     getTodo(id: $id) {
       id
-      item
+      description
       priority
+      isChecked
       createdAt
       updatedAt
     }
@@ -21,8 +22,9 @@ export const listTodos = /* GraphQL */ `
     listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        item
+        description
         priority
+        isChecked
         createdAt
         updatedAt
       }
