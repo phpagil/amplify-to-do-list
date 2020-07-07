@@ -62,13 +62,53 @@ function App() {
 
 const theme = {
   ...AmplifyTheme,
+  formContainer: {
+    ...AmplifyTheme.formContainer,
+    margin: "0",
+    width: "100%",
+    margin: "0",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+  },
+  sectionHeader: {
+    ...AmplifyTheme.sectionHeader,
+    backgroundColor: "#2a8a92",
+    fontSize: "1.1em"
+
+  },
+  inputLabel: {
+    ...AmplifyTheme.inputLabel,
+    marginTop: "10px",
+    marginBottom: "5px",
+    fontSize: "0.9em"
+  },
+  hint: {
+    ...AmplifyTheme.hint,
+    marginTop: "10px",
+    marginLeft: "5px",
+    fontSize: "0.8em"
+  },
+  sectionFooterSecondaryContent: {
+    ...AmplifyTheme.sectionFooterSecondaryContent,
+    margin: "10px",
+    fontSize: "0.8em"
+  },
+  button: {
+    ...AmplifyTheme.button,
+    marginLeft: "5px",
+    backgroundColor: "#68b8c1",
+    color: "white",
+    fontSize: "0.9em"
+  },
   navButton: {
     ...AmplifyTheme.navButton,
     backgroundColor: "#68b8c1",
     padding: "10px",
     fontWeight: "bold",
     color: "white",
-    margin: "0"
+    margin: "0",
   },
   navBar: {
     ...AmplifyTheme.navBar,
