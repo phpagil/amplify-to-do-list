@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { withAuthenticator } from 'aws-amplify-react';
+import { withAuthenticator, AmplifyTheme } from 'aws-amplify-react';
 
 function App() {
   const [arrItems, setArrItems] = useState([{ id: 1, description: "sleep", priority: 1, isChecked: false }]);
@@ -60,4 +60,28 @@ function App() {
   );
 }
 
-export default withAuthenticator(App, { includeGreetings: true });
+const theme = {
+  ...AmplifyTheme,
+  navButton: {
+    ...AmplifyTheme.navButton,
+    backgroundColor: "#68b8c1",
+    padding: "10px",
+    fontWeight: "bold",
+    color: "white",
+    margin: "0"
+  },
+  navBar: {
+    ...AmplifyTheme.navBar,
+    backgroundColor: "#fff",
+  },
+  navRight: {
+    ...AmplifyTheme.navRight,
+    margin: "0 8px"
+  },
+  navItem: {
+    ...AmplifyTheme.navItem,
+    padding: "10px"
+  },
+
+}
+export default withAuthenticator(App, true, [], null, theme);
