@@ -101,7 +101,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "description",
+          "name" : "task",
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -275,7 +275,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "task",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -997,7 +997,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "task",
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -1045,7 +1045,7 @@
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
-          "name" : "description",
+          "name" : "task",
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
@@ -1129,7 +1129,7 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "description",
+          "name" : "task",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",

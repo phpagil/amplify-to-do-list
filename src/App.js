@@ -1,9 +1,57 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { API, graphqlOperation } from 'aws-amplify'
 import { withAuthenticator, AmplifyTheme } from 'aws-amplify-react';
+import { createTodo } from './graphql/mutations';
+import { listTodos } from './graphql/queries';
 
 function App() {
-  const [arrItems, setArrItems] = useState([{ id: 1, description: "sleep", priority: 1, isChecked: false }]);
+  const [arrTasks, setArrTasks] = useState([]);
+  const [task, setTask] = useState("");
+  const [priority, setPriority] = useState(0);
+  const [isChecked, setIsChecked] = useState(false);
+
+  const getTasks = async () => {
+    try {
+      const result = await API.graphql(graphqlOperation(listTodos));
+      setArrTasks(result.data.listTodos.items)
+      console.log(result);
+    } catch (error) {
+
+    }
+
+  }
+  useEffect(() => {
+    getTasks();
+
+
+
+  }, []);
+
+
+
+  const handleChangeTask = (e) => {
+    setTask(e.target.value);
+  }
+
+  const handleChangePriority = (e) => {
+    setPriority(e.target.value);
+  }
+
+  const handleAddToDo = async (e) => {
+    e.preventDefault();
+    //setArrItems([{ task, priority }, ...arrItems]);
+    try {
+      const result = await API.graphql(graphqlOperation(createTodo, { input: { task, priority, isChecked } }))
+      setTask("");
+      setPriority(0);
+      setArrTasks([{ task, priority, isChecked }, ...arrTasks]);
+
+    } catch (error) {
+
+    }
+
+  }
+  /** Calculate today's date to show */
   let today = new Date();
   let options = {
     weekday: 'long',
@@ -11,6 +59,7 @@ function App() {
     month: 'long',
   }
   let day = today.toLocaleDateString('en-us', options);
+
   return (
     <div className="App">
       <div class="box" id="heading">
@@ -23,13 +72,15 @@ function App() {
         </div>
 
         <dl id="listTasks">
-          {arrItems.map(elem => {
-            return (<>
-              <dt class={elem.isChecked && "completed"} key={elem.id} >{elem.description}</dt>
-              <dd>Priority: {elem.priority}</dd>
-            </>
-            )
-          })}
+          {
+            arrTasks.map(elem => {
+              return (<>
+                <dt class={elem.isChecked && "completed"} key={elem.id} >{elem.task}</dt>
+                <dd>Priority: {elem.priority}</dd>
+              </>
+              )
+            })
+          }
         </dl>
 
       </div>
@@ -37,13 +88,14 @@ function App() {
         <h3>Add Task</h3>
         <table>
           <tr>
-            <td class="lbl"><label for="newTask">Task:</label></td>
-            <td colspan="2"><input type="text" id="newTask" placeholder="New item" /></td>
+            <td class="lbl"><label
+              htmlFor="newTask">Task:</label></td>
+            <td colspan="2"><input type="text" id="task" placeholder="New item" value={task} onChange={handleChangeTask} /></td>
           </tr>
           <tr>
-            <td class="lbl"><label for="optPriority">Priority:</label></td>
+            <td class="lbl"><label htmlFor="optPriority">Priority:</label></td>
             <td colspan="2">
-              <select id="newPriority" name="optPriority">
+              <select id="newPriority" name="optPriority" onChange={handleChangePriority} value={priority}>
                 <option value=""></option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -52,7 +104,7 @@ function App() {
             </td>
           </tr>
           <tr>
-            <td colspan="3" class="btn-add"><button id="addTask" class="btn-round">+</button></td>
+            <td colspan="3" class="btn-add"><button id="addTask" class="btn-round" onClick={handleAddToDo}>+</button></td>
           </tr>
         </table>
       </div>
@@ -66,7 +118,6 @@ const theme = {
     ...AmplifyTheme.formContainer,
     margin: "0",
     width: "100%",
-    margin: "0",
     position: "absolute",
     top: "50%",
     left: "50%",

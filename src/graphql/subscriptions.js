@@ -5,7 +5,7 @@ export const onCreateTodo = /* GraphQL */ `
   subscription OnCreateTodo {
     onCreateTodo {
       id
-      description
+      task
       priority
       isChecked
       createdAt
@@ -17,7 +17,7 @@ export const onUpdateTodo = /* GraphQL */ `
   subscription OnUpdateTodo {
     onUpdateTodo {
       id
-      description
+      task
       priority
       isChecked
       createdAt
@@ -29,7 +29,7 @@ export const onDeleteTodo = /* GraphQL */ `
   subscription OnDeleteTodo {
     onDeleteTodo {
       id
-      description
+      task
       priority
       isChecked
       createdAt

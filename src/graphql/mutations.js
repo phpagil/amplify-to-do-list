@@ -8,7 +8,7 @@ export const createTodo = /* GraphQL */ `
   ) {
     createTodo(input: $input, condition: $condition) {
       id
-      description
+      task
       priority
       isChecked
       createdAt
@@ -23,7 +23,7 @@ export const updateTodo = /* GraphQL */ `
   ) {
     updateTodo(input: $input, condition: $condition) {
       id
-      description
+      task
       priority
       isChecked
       createdAt
@@ -38,7 +38,7 @@ export const deleteTodo = /* GraphQL */ `
   ) {
     deleteTodo(input: $input, condition: $condition) {
       id
-      description
+      task
       priority
       isChecked
       createdAt

@@ -1,6 +1,6 @@
 type Todo @model {
   id: ID!
-  description: String!
+  task: String!
   priority: Int!
   isChecked: Boolean!
 }
