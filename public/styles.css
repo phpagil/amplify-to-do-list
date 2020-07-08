@@ -47,28 +47,33 @@ html {
     cursor:pointer;
   } 
   
+  .task {
+    margin-left:2rem;
+  }
   dl{
     padding:0;
   }
   
   dt {
+    display:inline;
     list-style-type: none;
-    position: relative;
     font-weight:bold;
     margin: 2px;
-    padding: 0.5em 0.5em 0.1em 2em;
+    padding: 0.5em 0.5em 0.1em 0.5em;
     
   }
   
   dd{
+    margin-left: 2em;
+    padding-bottom: 0.5em;
     font-weight: normal;
     font-style: italic;
   }
-  dl dt.completed {
+  dt.completed {
     background: #c3e1e5;
   }
   
-  dl dt.completed::before {
+  dt.completed::before {
     content: '';
     position: absolute;
     border-color:#2a8a92;
@@ -123,6 +128,19 @@ html {
   input[type="text"]:focus {
     outline: none;
     box-shadow: inset 0 -3px 0 0 #2a8a92;
+  }
+
+  input[type="checkbox"] {
+      display: inline;
+  }
+  button.delete {
+      font-size:1rem;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;     
   }
   .btn-round {
     min-height: 50px;

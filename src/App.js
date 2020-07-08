@@ -1,33 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { API, graphqlOperation } from 'aws-amplify'
-import { withAuthenticator, AmplifyTheme } from 'aws-amplify-react';
-import { createTodo } from './graphql/mutations';
-import { listTodos } from './graphql/queries';
+import { withAuthenticator } from 'aws-amplify-react';
+import * as api from './graphql/api';
+import theme from './theme';
 
 function App() {
   const [arrTasks, setArrTasks] = useState([]);
   const [task, setTask] = useState("");
   const [priority, setPriority] = useState(0);
-  const [isChecked, setIsChecked] = useState(false);
 
-  const getTasks = async () => {
+  /* HANDLE FUNCTIONS */
+  const handleCheck = async (value, id) => {
     try {
-      const result = await API.graphql(graphqlOperation(listTodos));
-      setArrTasks(result.data.listTodos.items)
-      console.log(result);
+      const updatedTask = await api.updateTask({ id, isChecked: value });
+      const index = arrTasks.findIndex(task => task.id === id);
+      setArrTasks([...arrTasks.slice(0, index), updatedTask, ...arrTasks.slice(index + 1)]);
     } catch (error) {
-
+      console.log(error);
     }
-
   }
-  useEffect(() => {
-    getTasks();
-
-
-
-  }, []);
-
-
 
   const handleChangeTask = (e) => {
     setTask(e.target.value);
@@ -39,18 +29,36 @@ function App() {
 
   const handleAddToDo = async (e) => {
     e.preventDefault();
-    //setArrItems([{ task, priority }, ...arrItems]);
     try {
-      const result = await API.graphql(graphqlOperation(createTodo, { input: { task, priority, isChecked } }))
+      const newTask = await api.addTask({ task, priority, isChecked: false });
+      setArrTasks([{ ...newTask }, ...arrTasks]);
       setTask("");
       setPriority(0);
-      setArrTasks([{ task, priority, isChecked }, ...arrTasks]);
-
     } catch (error) {
-
+      console.log(error);
     }
 
   }
+
+  const handleDelete = async (id) => {
+    try {
+      const deletedTaskID = await api.deleteTask(id);
+      setArrTasks(arrTasks.filter(task => task.id !== deletedTaskID));
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+  useEffect(async () => {
+    try {
+      const arr = await api.getTasks()
+      setArrTasks(arr);
+    } catch (error) {
+      console.log(error);
+    }
+
+  }, []);
+
   /** Calculate today's date to show */
   let today = new Date();
   let options = {
@@ -74,10 +82,12 @@ function App() {
         <dl id="listTasks">
           {
             arrTasks.map(elem => {
-              return (<>
-                <dt class={elem.isChecked && "completed"} key={elem.id} >{elem.task}</dt>
+              return (<div className="task" key={elem.id}>
+                <input type="checkbox" onClick={e => handleCheck(e.target.checked, elem.id)} checked={elem.isChecked} />
+                <dt>{elem.task}</dt>
+                <button className="delete" onClick={() => { handleDelete(elem.id) }}><span>&times;</span></button>
                 <dd>Priority: {elem.priority}</dd>
-              </>
+              </div>
               )
             })
           }
@@ -112,72 +122,4 @@ function App() {
   );
 }
 
-const theme = {
-  ...AmplifyTheme,
-  formContainer: {
-    ...AmplifyTheme.formContainer,
-    margin: "0",
-    width: "100%",
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-  },
-  sectionHeader: {
-    ...AmplifyTheme.sectionHeader,
-    backgroundColor: "#2a8a92",
-    fontSize: "1.1em"
-
-  },
-  input: {
-    ...AmplifyTheme.input,
-    marginTop: "3px"
-
-  },
-  inputLabel: {
-    ...AmplifyTheme.inputLabel,
-    marginTop: "10px",
-    marginBottom: "2px",
-    fontSize: "0.9em"
-  },
-  hint: {
-    ...AmplifyTheme.hint,
-    marginTop: "10px",
-    marginLeft: "5px",
-    fontSize: "0.8em"
-  },
-  sectionFooterSecondaryContent: {
-    ...AmplifyTheme.sectionFooterSecondaryContent,
-    margin: "10px",
-    fontSize: "0.8em"
-  },
-  button: {
-    ...AmplifyTheme.button,
-    marginLeft: "5px",
-    backgroundColor: "#68b8c1",
-    color: "white",
-    fontSize: "0.9em"
-  },
-  navButton: {
-    ...AmplifyTheme.navButton,
-    backgroundColor: "#68b8c1",
-    padding: "10px",
-    fontWeight: "bold",
-    color: "white",
-    margin: "0",
-  },
-  navBar: {
-    ...AmplifyTheme.navBar,
-    backgroundColor: "#fff",
-  },
-  navRight: {
-    ...AmplifyTheme.navRight,
-    margin: "0 8px"
-  },
-  navItem: {
-    ...AmplifyTheme.navItem,
-    padding: "10px"
-  },
-
-}
 export default withAuthenticator(App, true, [], null, theme);
