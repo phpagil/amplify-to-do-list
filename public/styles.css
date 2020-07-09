@@ -1,11 +1,4 @@
-html {
-    background-color: #e7e4de;
-    background-image: -webkit-linear-gradient(65deg, #aad0d4 50%, #e7e4de 50%);
-    min-height: 1000px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-  
-  }
+
   h1 {
     color: #fff;
   }
@@ -16,9 +9,9 @@ html {
   
   .box {
     max-width: 500px;
-  
     margin: 50px auto;
     background: white;
+    color:#333;
     border-radius: 5px;
     box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
     padding:5px;
@@ -29,23 +22,7 @@ html {
     text-align: center;
   }
   
-  .btn-group {
-    display: block;
-    text-align:center;
-  }
-  
-  .btn-group button {
-    margin:5px;
-    border-color: transparent;
-    border-radius:5px;
-    background-color: #68b8c1;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px;
-    border-width: 0;
-    outline:none;
-    cursor:pointer;
-  } 
+
   
   .task {
     margin-left:2rem;
@@ -54,7 +31,7 @@ html {
     padding:0;
   }
   
-  dt {
+  ul {
     display:inline;
     list-style-type: none;
     font-weight:bold;
@@ -69,11 +46,11 @@ html {
     font-weight: normal;
     font-style: italic;
   }
-  dt.completed {
+  li.completed {
     background: #c3e1e5;
   }
   
-  dt.completed::before {
+  li.completed::before {
     content: '';
     position: absolute;
     border-color:#2a8a92;
@@ -133,8 +110,27 @@ html {
   input[type="checkbox"] {
       display: inline;
   }
-  button.delete {
-      font-size:1rem;
+  .btn-group {
+      flex-shrink:0;
+    margin-left:auto;
+    
+  }
+  
+  .btn-group button {
+    margin:5px;
+    border-color: transparent;
+    border-radius:5px;
+    background-color: #68b8c1;
+    color:#333;
+    font-size: 16px;
+    padding: 10px;
+    border-width: 0;
+    outline:none;
+    cursor:pointer;
+  } 
+
+  .btn-group button.delete, button.edit {
+    font-size:1rem;
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;

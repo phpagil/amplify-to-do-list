@@ -1,8 +1,7 @@
 type Todo {
   id: ID!
   task: String!
-  priority: Int!
-  isChecked: Boolean!
+  completed: Boolean!
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
 }
@@ -93,8 +92,7 @@ input ModelSizeInput {
 input ModelTodoFilterInput {
   id: ModelIDInput
   task: ModelStringInput
-  priority: ModelIntInput
-  isChecked: ModelBooleanInput
+  completed: ModelBooleanInput
   and: [ModelTodoFilterInput]
   or: [ModelTodoFilterInput]
   not: ModelTodoFilterInput
@@ -121,15 +119,13 @@ type Query {
 input CreateTodoInput {
   id: ID
   task: String!
-  priority: Int!
-  isChecked: Boolean!
+  completed: Boolean!
 }
 
 input UpdateTodoInput {
   id: ID!
   task: String
-  priority: Int
-  isChecked: Boolean
+  completed: Boolean
 }
 
 input DeleteTodoInput {
@@ -144,8 +140,7 @@ type Mutation {
 
 input ModelTodoConditionInput {
   task: ModelStringInput
-  priority: ModelIntInput
-  isChecked: ModelBooleanInput
+  completed: ModelBooleanInput
   and: [ModelTodoConditionInput]
   or: [ModelTodoConditionInput]
   not: ModelTodoConditionInput

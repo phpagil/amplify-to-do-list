@@ -9,10 +9,12 @@ const theme = {
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
+        fontFamily: "'Roboto', sans- serif"
     },
     sectionHeader: {
         ...AmplifyTheme.sectionHeader,
         backgroundColor: "#2a8a92",
+        fontFamily: "'Roboto', sans- serif",
         fontSize: "1.1em"
 
     },
@@ -56,6 +58,8 @@ const theme = {
     navBar: {
         ...AmplifyTheme.navBar,
         backgroundColor: "#fff",
+        fontFamily: "'Roboto', sans- serif",
+        fontSize: "0.8em"
     },
     navRight: {
         ...AmplifyTheme.navRight,
@@ -63,7 +67,7 @@ const theme = {
     },
     navItem: {
         ...AmplifyTheme.navItem,
-        padding: "10px"
+        padding: "15px"
     },
 
 }

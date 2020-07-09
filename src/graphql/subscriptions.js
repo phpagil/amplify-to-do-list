@@ -6,8 +6,7 @@ export const onCreateTodo = /* GraphQL */ `
     onCreateTodo {
       id
       task
-      priority
-      isChecked
+      completed
       createdAt
       updatedAt
     }
@@ -18,8 +17,7 @@ export const onUpdateTodo = /* GraphQL */ `
     onUpdateTodo {
       id
       task
-      priority
-      isChecked
+      completed
       createdAt
       updatedAt
     }
@@ -30,8 +28,7 @@ export const onDeleteTodo = /* GraphQL */ `
     onDeleteTodo {
       id
       task
-      priority
-      isChecked
+      completed
       createdAt
       updatedAt
     }

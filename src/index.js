@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import TasksState from './context/tasks/tasksState';
+import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Amplify from 'aws-amplify';
 import aws_exports from './aws-exports';
@@ -8,7 +10,9 @@ Amplify.configure(aws_exports);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <TasksState>
+      <App />
+    </TasksState>
   </React.StrictMode>,
   document.getElementById('root')
 );

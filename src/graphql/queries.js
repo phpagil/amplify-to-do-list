@@ -6,8 +6,7 @@ export const getTodo = /* GraphQL */ `
     getTodo(id: $id) {
       id
       task
-      priority
-      isChecked
+      completed
       createdAt
       updatedAt
     }
@@ -23,8 +22,7 @@ export const listTodos = /* GraphQL */ `
       items {
         id
         task
-        priority
-        isChecked
+        completed
         createdAt
         updatedAt
       }
