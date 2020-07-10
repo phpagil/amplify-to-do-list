@@ -25,7 +25,6 @@ const NewToDoForm = () => {
     const handleCloseAlert = (e) => {
         e.preventDefault();
         setErr("");
-        console.log(err);
     }
     return (
         <>

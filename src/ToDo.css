@@ -101,3 +101,30 @@ background:#7BC1C9
   background-color: #D9EDF0;
 }
 
+/*** error msg ***/
+.alert {
+  font-size:0.8em;
+  margin:5px 0;
+  padding: 10px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  background-color: transparent;
+  font-weight: bold;
+  float: right;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  border:none;
+  outline:none;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
