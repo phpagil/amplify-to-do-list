@@ -4,6 +4,7 @@ type Todo {
   completed: Boolean!
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
+  owner: String
 }
 
 enum ModelSortDirection {
@@ -147,7 +148,7 @@ input ModelTodoConditionInput {
 }
 
 type Subscription {
-  onCreateTodo: Todo @aws_subscribe(mutations: ["createTodo"])
-  onUpdateTodo: Todo @aws_subscribe(mutations: ["updateTodo"])
-  onDeleteTodo: Todo @aws_subscribe(mutations: ["deleteTodo"])
+  onCreateTodo(owner: String!): Todo @aws_subscribe(mutations: ["createTodo"])
+  onUpdateTodo(owner: String!): Todo @aws_subscribe(mutations: ["updateTodo"])
+  onDeleteTodo(owner: String!): Todo @aws_subscribe(mutations: ["deleteTodo"])
 }

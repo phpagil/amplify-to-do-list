@@ -5,7 +5,7 @@ import './NewToDoForm.css'
 const NewToDoForm = () => {
     /*** TASKS ***/
     const tasksContext = useContext(TasksContext);
-
+    const [err, setErr] = useState("");
     const [task, setTask] = useState("");
 
     const handleChangeTask = (e) => {
@@ -14,16 +14,34 @@ const NewToDoForm = () => {
 
     const handleAddToDo = async (e) => {
         e.preventDefault();
-        tasksContext.addTask({ task, completed: false });
-        setTask("");
+        if (task.trim() === "") {
+            setErr("Please enter a task to do!");
+        } else {
+            tasksContext.addTask({ task, completed: false });
+            setTask("");
+        }
+    }
 
+    const handleCloseAlert = (e) => {
+        e.preventDefault();
+        setErr("");
+        console.log(err);
     }
     return (
-        <form className='NewTodoForm' onSubmit={handleAddToDo}>
-            <label htmlFor="newTask">New To Do:</label>
-            <input type="text" id="newTask" placeholder="Enter To Do" value={task} onChange={handleChangeTask} />
-            <button>Add</button>
-        </form>
+        <>
+            <form className='NewTodoForm' onSubmit={handleAddToDo}>
+                <label htmlFor="newTask">New To Do:</label>
+                <input type="text" id="newTask" placeholder="Enter To Do" value={task} onChange={handleChangeTask} />
+                <button>Add</button>
+            </form>
+
+            {(err !== "") &&
+                <div className="alert">
+                    <button className="closebtn" onClick={handleCloseAlert}>&times;</button>
+                    <strong>Error!</strong> {err}
+                </div>
+            }
+        </>
     );
 };
 

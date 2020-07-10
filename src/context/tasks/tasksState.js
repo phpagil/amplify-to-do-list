@@ -7,7 +7,8 @@ import {
     EDIT_TASK,
     INIT_ARRTASKS,
     REMOVE_TASK,
-    ADD_TASK
+    ADD_TASK,
+    SET_ERR,
 }
     from '../types';
 
@@ -15,6 +16,7 @@ const TasksState = props => {
     const initialState = {
         /*** ARRAY TASKS ***/
         arrTasks: [],
+        err: null,
     }
     const [state, dispatch] = useReducer(TasksReducer, initialState);
 
@@ -28,7 +30,10 @@ const TasksState = props => {
                     arrTasks: arr,
                 });
             } catch (error) {
-
+                dispatch({
+                    type: SET_ERR,
+                    err: "There has been an error. Please try again.",
+                })
             }
         }
         initArr();
@@ -47,7 +52,10 @@ const TasksState = props => {
                 arrTasks: [...state.arrTasks.slice(0, index), editedTask, ...state.arrTasks.slice(index + 1)],
             });
         } catch (error) {
-            console.log(error);
+            dispatch({
+                type: SET_ERR,
+                err: "There has been an error. Please try again.",
+            })
         }
     }
 
@@ -65,7 +73,10 @@ const TasksState = props => {
                 arrTasks: state.arrTasks.filter(task => task.id !== deletedTaskID),
             });
         } catch (error) {
-            console.log(error);
+            dispatch({
+                type: SET_ERR,
+                err: "There has been an error. Please try again.",
+            })
         }
     }
     const addTask = async (task) => {
@@ -77,7 +88,10 @@ const TasksState = props => {
                 arrTasks: [...state.arrTasks, { ...newTask }],
             });
         } catch (error) {
-            console.log(error);
+            dispatch({
+                type: SET_ERR,
+                err: "There has been a database error. Please try again.",
+            })
         }
     }
 
@@ -90,6 +104,7 @@ const TasksState = props => {
                 initArrTasks,
                 removeTask,
                 addTask,
+                err: state.err,
             }}
         >
             {props.children}
