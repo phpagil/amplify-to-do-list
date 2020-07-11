@@ -49,15 +49,18 @@ It includes a login in page so that each user can have his/her own to do list.
   </tr>
  </table>
 
+## Techonology
 
-## Technology
+* [React Hooks](https://reactjs.org/) - A JavaScript library for building user interfaces.
+* [GraphQL](https://graphql.org/) - A query language for your API.
+* [AWS Amplify](https://aws.amazon.com/amplify/) - Fastest, easiest way to develop mobile and web apps that scale.
+* [AWS DynamoDB](https://aws.amazon.com/dynamodb/) - A Serverless Database that Automatically Scales and Continuously Backs Up Your Data.
+* [Netlify](https://www.netlify.com/) - The fastest way to build the fastest sites.
 
-The app is currently hosted on [netlify](https://www.netlify.com/), and connects to a [AWS DynamoDB](https://aws.amazon.com/dynamodb/) database. 
 
-The app uses [GraphQL](https://graphql.org/)for fulfilling queries with the existing [DynamoDB](https://aws.amazon.com/dynamodb/) database.
+## Authors
 
-The app uses ReactJS hooks for the front-end.
-
+* **Azlina Yeo** - *Initial work* - [nax2uk](https://github.com/nax2uk)
 
 ## License
 
