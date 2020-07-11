@@ -39,7 +39,7 @@ It includes a login in page so that each user can have his/her own to do list.
     <td><img src="/images/user-stories/logout.png" width=350 height=270></td>
   </tr>
  </table>
-![User sign in](/public/images/user-stories/login.png =350x)
+![User sign in](/public/images/user-stories/login.png =350px)
 ![User can add tasks](/public/images/user-stories/add.jpg)| ![User can edit task](/images/user-stories/edit.jpg) |
 ![User can check-off tasks](/images/user-stories/check-off.jpg)| ![User can delete tasks](/images/user-stories/delete.jpg |
 ![User can login](/public/images/user-stories/login.png)| ![User can sign up](/public/images/user-stories/signup.png) | 
