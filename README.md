@@ -25,12 +25,12 @@ It includes a sign in, sign up page so that each user can have his/her own to do
 
 1. A user can click the trash can button to delete a task.
 
-## Previews
+## Screenshots
 <table>
   <tr>
-    <td>Sign In Page</td>
-     <td>Sign Up Page</td>
-     <td>Sign Out Page</td>
+    <td>Sign In </td>
+     <td>Sign Up </td>
+     <td>Sign Out </td>
   </tr>
   <tr>
     <td><img src="/public/images/user-stories/login.png" width=250></td>
@@ -38,9 +38,9 @@ It includes a sign in, sign up page so that each user can have his/her own to do
     <td><img src="/public/images/user-stories/logout.png" width=250></td>
   </tr>
     <tr>
-    <td>App Interface Screenshot</td>
-     <td>Edit To Do Screenshot</td>
-     <td>Error Alert Screenshot</td>
+    <td>App Interface </td>
+     <td>Edit To Do </td>
+     <td>Error Alert </td>
   </tr>
   <tr>
     <td><img src="/public/images/user-stories/app-interface.png" width=250></td>
