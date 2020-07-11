@@ -51,7 +51,7 @@ It includes a sign in, sign up page so that each user can have his/her own to do
 
 ## Techonology
 
-* [React Hooks](https://reactjs.org/) - A JavaScript library for building user interfaces.
+* [ReactJS with React Hooks](https://reactjs.org/) - A JavaScript library for building user interfaces.
 * [GraphQL](https://graphql.org/) - A query language for your API.
 * [AWS Amplify](https://aws.amazon.com/amplify/) - Fastest, easiest way to develop mobile and web apps that scale.
 * [AWS Cognito](https://aws.amazon.com/cognito/) - Simple and Secure User Sign-Up, Sign-In, and Access Control.
