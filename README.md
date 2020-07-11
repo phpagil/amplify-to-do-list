@@ -8,7 +8,6 @@ It includes a login in page so that each user can have his/her own to do list.
 ### Adding a task
 
 1. A user can add a task by filling in the input box and clicking the add button.
-[<img src="/public/images/user-stories/login.png" width="250"/>](image.png)
 1. An error message box appears if the user enters an empty string and clicking the add button.
 
 ### Editing a task
@@ -29,9 +28,9 @@ It includes a login in page so that each user can have his/her own to do list.
 ## Previews
 <table>
   <tr>
-    <td>Login Page</td>
+    <td>Sign In Page</td>
      <td>Sign Up Page</td>
-     <td>Log Out Page</td>
+     <td>Sign Out Page</td>
   </tr>
   <tr>
     <td><img src="/public/images/user-stories/login.png" width=250></td>
@@ -39,7 +38,7 @@ It includes a login in page so that each user can have his/her own to do list.
     <td><img src="/public/images/user-stories/logout.png" width=250></td>
   </tr>
     <tr>
-    <td>App Page</td>
+    <td>App Interface Screenshot</td>
      <td>Edit To Do Screenshot</td>
      <td>Error Alert Screenshot</td>
   </tr>
