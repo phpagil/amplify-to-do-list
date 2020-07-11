@@ -1,7 +1,7 @@
 # Simple To Do App
 This app allows a user to manage a list of tasks to complete.
 
-It includes a login in page so that each user can have his/her own to do list.
+It includes a sign in, sign up page so that each user can have his/her own to do list.
 
 ## User flows
 
@@ -54,6 +54,7 @@ It includes a login in page so that each user can have his/her own to do list.
 * [React Hooks](https://reactjs.org/) - A JavaScript library for building user interfaces.
 * [GraphQL](https://graphql.org/) - A query language for your API.
 * [AWS Amplify](https://aws.amazon.com/amplify/) - Fastest, easiest way to develop mobile and web apps that scale.
+* [AWS Cognito](https://aws.amazon.com/cognito/) - Simple and Secure User Sign-Up, Sign-In, and Access Control.
 * [AWS DynamoDB](https://aws.amazon.com/dynamodb/) - A Serverless Database that Automatically Scales and Continuously Backs Up Your Data.
 * [Netlify](https://www.netlify.com/) - The fastest way to build the fastest sites.
 
