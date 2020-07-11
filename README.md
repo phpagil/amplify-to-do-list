@@ -5,31 +5,32 @@ It includes a sign in, sign up page so that each user can have his/her own to do
 
 
 ## Link
-1. [A Simple React Hooks To Do App](https://aws-to-do-list.netlify.app/)
-1. You can use the following credentials to sign in: username: demo123, password: password
+* [A Simple React Hooks To Do App](https://aws-to-do-list.netlify.app/)
+* You can use the following credentials to sign in: 
+  * Username: demo123 
+  * Password: password
 
 
 ## User flows
 
 ### Adding a task
 
-1. A user can add a task by filling in the input box and clicking the add button.
-1. An error message box appears if the user enters an empty string and clicks the add button.
+* A user can add a task by filling in the input box and clicking the add button.
+* An error message box appears if the user enters an empty string and clicks the add button.
 
 ### Editing a task
 
-1. A user can edit an existing task by clicking the pencil icon and editing to input box before clicking the save button.
-1. An error message box appears if the user enters an empty string and clicks the save button.
+* A user can edit an existing task by clicking the pencil icon and editing to input box before clicking the save button.
+* An error message box appears if the user enters an empty string and clicks the save button.
 
 ### Checking off a task
 
-1. A user can click on an existing task to mark it as completed.
-1. The description of the task will be striked out.
+* A user can click on an existing task to mark it as completed.
+* The description of the task will be striked out.
 
 
 ### Deleting a task
-
-1. A user can click the trash can button to delete a task.
+* A user can click the trash can button to delete a task.
 
 ## Screenshots
 <table>
