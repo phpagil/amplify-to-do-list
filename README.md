@@ -49,7 +49,7 @@ It includes a sign in, sign up page so that each user can have his/her own to do
   </tr>
  </table>
 
-## Techonology
+## Technology
 
 * [ReactJS with React Hooks](https://reactjs.org/) - A JavaScript library for building user interfaces.
 * [GraphQL](https://graphql.org/) - A query language for your API.
