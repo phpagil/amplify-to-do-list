@@ -36,7 +36,7 @@ It includes a login in page so that each user can have his/her own to do list.
   <tr>
     <td><img src="/public/images/user-stories/login.png" width=250></td>
     <td><img src="/public/images/user-stories/signup.png" width=250></td>
-    <td><img src="/images/user-stories/logout.png" width=250></td>
+    <td><img src="/public/images/user-stories/logout.png" width=250></td>
   </tr>
  </table>
 ![User sign in](/public/images/user-stories/login.png =350px)
