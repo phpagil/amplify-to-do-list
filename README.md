@@ -26,14 +26,22 @@ It includes a login in page so that each user can have his/her own to do list.
 1. A user can click the trash can button to delete a task.
 
 ## Previews
+<table>
+  <tr>
+    <tdUser can log in</td>
+     <td>User can sign up</td>
+     <td>User can log out</td>
+  </tr>
+  <tr>
+    <td><img src="/public/images/user-stories/login.png" width=270 height=350></td>
+    <td><img src="/public/images/user-stories/signup.png" width=270 height=350></td>
+    <td><img src="/images/user-stories/logout.png" width=270 height=350></td>
+  </tr>
+ </table>
 
-
-![User can add tasks](/public/images/user-stories/add.jpg)| 
-![User can edit task](/images/user-stories/edit.jpg) |
-![User can check-off tasks](/images/user-stories/check-off.jpg)
-![User can delete tasks](/images/user-stories/delete.jpg |
-![User can login](/public/images/user-stories/login.png)| 
-![User can sign up](/public/images/user-stories/signup.png) | 
+![User can add tasks](/public/images/user-stories/add.jpg)| ![User can edit task](/images/user-stories/edit.jpg) |
+![User can check-off tasks](/images/user-stories/check-off.jpg)| ![User can delete tasks](/images/user-stories/delete.jpg |
+![User can login](/public/images/user-stories/login.png)| ![User can sign up](/public/images/user-stories/signup.png) | 
 ![User can log out](/images/user-stories/logout.jpg)  
 
 ## Technology
