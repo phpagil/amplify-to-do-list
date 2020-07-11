@@ -8,12 +8,12 @@ It includes a sign in, sign up page so that each user can have his/her own to do
 ### Adding a task
 
 1. A user can add a task by filling in the input box and clicking the add button.
-1. An error message box appears if the user enters an empty string and clicking the add button.
+1. An error message box appears if the user enters an empty string and clicks the add button.
 
 ### Editing a task
 
 1. A user can edit an existing task by clicking the pencil icon and editing to input box before clicking the save button.
-1. An error message box appears if the user enters an empty string and clicking the save button.
+1. An error message box appears if the user enters an empty string and clicks the save button.
 
 ### Checking off a task
 
