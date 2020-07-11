@@ -29,7 +29,7 @@ It includes a login in page so that each user can have his/her own to do list.
 ## Previews
 <table>
   <tr>
-    <tdUser can log in</td>
+    <td>User can log in</td>
      <td>User can sign up</td>
      <td>User can log out</td>
   </tr>
