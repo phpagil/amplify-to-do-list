@@ -28,10 +28,13 @@ It includes a login in page so that each user can have his/her own to do list.
 ## Previews
 
 
-| ![User can add tasks](/images/user-stories/add.jpg)| ![User can edit task](/images/user-stories/edit.jpg) |
-
-| ![User can check-off tasks](/images/user-stories/check-off.jpg) | ![User can delete tasks](/images/user-stories/delete.jpg)                     |
-| ![User can login](/images/user-stories/login.png)                | ![User can sign up](/images/user-stories/signup.png)    | ![User can log out](/images/user-stories/logout.jpg)  
+![User can add tasks](/images/user-stories/add.jpg)| 
+![User can edit task](/images/user-stories/edit.jpg) |
+![User can check-off tasks](/images/user-stories/check-off.jpg)
+![User can delete tasks](/images/user-stories/delete.jpg |
+![User can login](/images/user-stories/login.png)| 
+![User can sign up](/images/user-stories/signup.png) | 
+![User can log out](/images/user-stories/logout.jpg)  
 
 ## Technology
 
