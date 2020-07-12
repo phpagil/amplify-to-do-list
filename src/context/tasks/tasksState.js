@@ -44,9 +44,9 @@ const TasksState = props => {
 
         try {
             const editedTask = await api.updateTask(task);
-            console.log(editedTask);
+
             const index = state.arrTasks.findIndex(currTask => currTask.id === task.id);
-            console.log(index);
+
             dispatch({
                 type: EDIT_TASK,
                 arrTasks: [...state.arrTasks.slice(0, index), editedTask, ...state.arrTasks.slice(index + 1)],
