@@ -5,32 +5,32 @@ export default (state, action) => {
         case SET_ARRTASKS:
             return {
                 ...state,
-                arrTasks: action.arrTasks,
+                arrTasks: action.payload.arrTasks,
             }
         case EDIT_TASK:
             return {
                 ...state,
-                arrTasks: action.arrTasks,
+                arrTasks: [...state.arrTasks.slice(0, action.payload.index), action.payload.editedTask, ...state.arrTasks.slice(action.payload.index + 1)],
             }
         case INIT_ARRTASKS:
             return {
                 ...state,
-                arrTasks: action.arrTasks,
+                arrTasks: action.payload.arr,
             }
         case REMOVE_TASK:
             return {
                 ...state,
-                arrTasks: action.arrTasks,
+                arrTasks: state.arrTasks.filter(task => task.id !== action.payload.deletedTaskID),
             }
         case ADD_TASK:
             return {
                 ...state,
-                arrTasks: action.arrTasks,
+                arrTasks: [...state.arrTasks, { ...action.payload.newTask }],
             }
         case SET_ERR:
             return {
                 ...state,
-                err: action.err,
+                err: action.payload.error,
             }
         default: return state;
     }

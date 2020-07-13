@@ -27,12 +27,16 @@ const TasksState = props => {
                 const arr = await api.getTasks();
                 dispatch({
                     type: INIT_ARRTASKS,
-                    arrTasks: arr,
+                    payload: {
+                        arr,
+                    },
                 });
             } catch (error) {
                 dispatch({
                     type: SET_ERR,
-                    err: "There has been an error. Please try again.",
+                    payload: {
+                        error,
+                    }
                 })
             }
         }
@@ -49,19 +53,26 @@ const TasksState = props => {
 
             dispatch({
                 type: EDIT_TASK,
-                arrTasks: [...state.arrTasks.slice(0, index), editedTask, ...state.arrTasks.slice(index + 1)],
+                payload: {
+                    index, editedTask,
+                }
+
             });
         } catch (error) {
             dispatch({
                 type: SET_ERR,
-                err: "There has been an error. Please try again.",
+                payload: {
+                    error
+                },
             })
         }
     }
 
     const setArrTasks = (arrTasks) => dispatch({
         type: SET_ARRTASKS,
-        arrTasks: arrTasks
+        payload: {
+            arrTasks,
+        }
     });
 
     const removeTask = async (id) => {
@@ -70,12 +81,16 @@ const TasksState = props => {
 
             dispatch({
                 type: REMOVE_TASK,
-                arrTasks: state.arrTasks.filter(task => task.id !== deletedTaskID),
+                payload: {
+                    deletedTaskID
+                }
             });
         } catch (error) {
             dispatch({
                 type: SET_ERR,
-                err: "There has been an error. Please try again.",
+                payload: {
+                    error
+                }
             })
         }
     }
@@ -85,12 +100,16 @@ const TasksState = props => {
 
             dispatch({
                 type: ADD_TASK,
-                arrTasks: [...state.arrTasks, { ...newTask }],
+                payload: {
+                    newTask,
+                }
             });
         } catch (error) {
             dispatch({
                 type: SET_ERR,
-                err: "There has been a database error. Please try again.",
+                payload: {
+                    error
+                },
             })
         }
     }
