@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from 'react';
-import * as utils from './utils/utils';
-import TasksContext from './context/tasks/tasksContext';
+import * as utils from '../utils/utils';
+import TasksContext from '../context/tasks/tasksContext';
 import ToDo from './ToDo';
-import './ToDoList.css';
+import './../css/ToDoList.css';
 import NewToDoForm from './NewToDoForm';
 
 function ToDoList() {
@@ -35,7 +35,6 @@ function ToDoList() {
         </div>
     );
 }
-
 
 
 export default ToDoList;

@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import TasksContext from './context/tasks/tasksContext';
-import './ToDo.css';
+import TasksContext from '../context/tasks/tasksContext';
+import '../css/ToDo.css';
 
 
 const Todo = ({ task }) => {

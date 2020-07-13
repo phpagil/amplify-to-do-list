@@ -1,9 +1,8 @@
 
 import React from 'react';
 import { withAuthenticator } from 'aws-amplify-react';
-import ToDoList from './ToDoList';
-import theme from './theme';
-
+import ToDoList from './components/ToDoList';
+import theme from './utils/theme';
 
 
 function App() {

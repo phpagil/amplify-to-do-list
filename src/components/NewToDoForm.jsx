@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import TasksContext from './context/tasks/tasksContext';
-import './NewToDoForm.css'
+import TasksContext from '../context/tasks/tasksContext';
+import '../css/NewToDoForm.css'
 
 const NewToDoForm = () => {
     /*** TASKS ***/
