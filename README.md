@@ -10,6 +10,8 @@ It includes a sign in, sign up page so that each user can have his/her own to do
   * Username: demo123 
   * Password: password
 
+## Purpose of project
+* This is just a simple app for me to practice new skills: React Hooks, AWS and GraphQL.
 
 ## User flows
 
