@@ -11,7 +11,11 @@ It includes a sign in, sign up page so that each user can have his/her own to do
   * Password: password
 
 ## Purpose of project
-* This is just a simple app for me to practice new skills: React Hooks, AWS and GraphQL.
+* This is a simple app for me to practice new skills: 
+  * Using React Hooks, and useContext for state management
+  * Setting up AWS Cognito and using Auth 
+  * Using GraphQL with DynamoDB.
+* Also practised unit testing in React with Jest.
 
 ## User flows
 
@@ -65,6 +69,7 @@ It includes a sign in, sign up page so that each user can have his/her own to do
 * [AWS Amplify](https://aws.amazon.com/amplify/) - Fastest, easiest way to develop mobile and web apps that scale.
 * [AWS Cognito](https://aws.amazon.com/cognito/) - Simple and Secure User Sign-Up, Sign-In, and Access Control.
 * [AWS DynamoDB](https://aws.amazon.com/dynamodb/) - A Serverless Database that Automatically Scales and Continuously Backs Up Your Data.
+* [Jest](https://jestjs.io/) - Delightful Javascript Testing
 * [Netlify](https://www.netlify.com/) - The fastest way to build the fastest sites.
 
 
