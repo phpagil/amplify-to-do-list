@@ -1,9 +1,8 @@
 import React, { useReducer, useCallback } from 'react';
 import TasksContext from './tasksContext';
-import TasksReducer from './tasksReducer';
+import tasksReducer from './tasksReducer';
 import * as api from '../../graphql/api';
 import {
-    SET_ARRTASKS,
     EDIT_TASK,
     INIT_ARRTASKS,
     REMOVE_TASK,
@@ -18,7 +17,8 @@ const TasksState = props => {
         arrTasks: [],
         err: null,
     }
-    const [state, dispatch] = useReducer(TasksReducer, initialState);
+
+    const [state, dispatch] = useReducer(tasksReducer, initialState);
 
     const initArrTasks = useCallback(() => {
 
@@ -68,21 +68,14 @@ const TasksState = props => {
         }
     }
 
-    const setArrTasks = (arrTasks) => dispatch({
-        type: SET_ARRTASKS,
-        payload: {
-            arrTasks,
-        }
-    });
-
-    const removeTask = async (id) => {
+    const removeTask = async (deletedTaskID) => {
         try {
-            const deletedTaskID = await api.deleteTask(id);
+            const id = await api.deleteTask(deletedTaskID);
 
             dispatch({
                 type: REMOVE_TASK,
                 payload: {
-                    deletedTaskID
+                    id
                 }
             });
         } catch (error) {
@@ -118,7 +111,6 @@ const TasksState = props => {
         <TasksContext.Provider
             value={{
                 arrTasks: state.arrTasks,
-                setArrTasks,
                 editTask,
                 initArrTasks,
                 removeTask,

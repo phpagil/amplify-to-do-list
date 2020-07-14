@@ -7,13 +7,11 @@ import NewToDoForm from './NewToDoForm';
 
 function ToDoList() {
 
-
     /*** TASKS ***/
     const tasksContext = useContext(TasksContext);
 
     // renders only on mounting
     useEffect(tasksContext.initArrTasks, []);
-
 
     const today = utils.getDate();
     return (

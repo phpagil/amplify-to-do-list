@@ -1,12 +1,7 @@
-import { SET_ARRTASKS, EDIT_TASK, INIT_ARRTASKS, REMOVE_TASK, ADD_TASK, SET_ERR } from '../types';
+import { EDIT_TASK, INIT_ARRTASKS, REMOVE_TASK, ADD_TASK, SET_ERR } from '../types';
 
-export default (state, action) => {
+const tasksReducer = (state, action) => {
     switch (action.type) {
-        case SET_ARRTASKS:
-            return {
-                ...state,
-                arrTasks: action.payload.arrTasks,
-            }
         case EDIT_TASK:
             return {
                 ...state,
@@ -20,7 +15,7 @@ export default (state, action) => {
         case REMOVE_TASK:
             return {
                 ...state,
-                arrTasks: state.arrTasks.filter(task => task.id !== action.payload.deletedTaskID),
+                arrTasks: state.arrTasks.filter(task => task.id !== action.payload.id),
             }
         case ADD_TASK:
             return {
@@ -35,3 +30,4 @@ export default (state, action) => {
         default: return state;
     }
 }
+export default tasksReducer;
