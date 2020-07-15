@@ -129,10 +129,6 @@ background:#7BC1C9
 }
 
 
-@media screen and (max-width: 768px){
-
-}
-
 @media screen and (max-width: 450px){
   .Todo-buttons button {
 
