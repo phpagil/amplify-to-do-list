@@ -13,7 +13,7 @@
   border: none;
   background: #D9EDF0;
   padding: 0 1.5em;
-  font-size: initial;
+  font-size: 0.8rem;
   outline: none;
 }
 .NewTodoForm button {
@@ -65,7 +65,7 @@
   color: black;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 768px){
   .NewTodoForm label {
     font-size: 0.9rem;
   }
