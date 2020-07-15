@@ -14,7 +14,7 @@ const Todo = ({ task }) => {
     const handleUpdate = (e) => {
         e.preventDefault();
         if (currTask.trim() === "") {
-            setErr("Please add a description for your updated task!");
+            setErr("Please add a description!");
         }
         else {
             tasksContext.editTask({ id: task.id, task: currTask });

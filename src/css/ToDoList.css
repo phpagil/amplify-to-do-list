@@ -31,3 +31,38 @@
 .Todo .Todo-buttons i {
   display: inline-block;
 }
+
+@media screen and (max-width: 768px){
+  .TodoList {
+    width: 500px;
+  }
+  .TodoList h1 {
+    font-size:2rem;
+  }.TodoList h1 span {
+    font-size:0.6rem;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .TodoList {
+    width: 350px;
+  }
+  .TodoList h1 {
+    font-size:1.3rem;
+  }.TodoList h1 span {
+    font-size:0.45rem;
+  }
+
+}
+
+@media screen and (max-width: 320px){
+  .TodoList {
+    width: 300px;
+  }
+  .TodoList h1 {
+    font-size:1.1rem;
+  }.TodoList h1 span {
+    font-size:0.3rem;
+  }
+
+}
