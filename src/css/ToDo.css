@@ -130,6 +130,9 @@ background:#7BC1C9
 
 
 @media screen and (max-width: 450px){
+  .Todo.completed .Todo-task:before {
+    height:1px;
+  }
   .Todo-buttons button {
 
     font-size: 0.6em;
