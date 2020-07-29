@@ -12,7 +12,7 @@ It includes a sign in, sign up page so that each user can have his/her own to do
 
 ## Purpose of project
 * This is a simple app for me to practice new skills: 
-  * Using React Hooks, and useContext for state management.
+  * Using React Hooks, and useContext and useReducer for state management.
   * Using AWS Cognito for user Management.
   * Using GraphQL with DynamoDB.
 * Also practised unit testing in React with Jest.
