@@ -8,7 +8,7 @@ It includes a sign in, sign up page so that each user can have his/her own to do
 * [A Simple React Hooks To Do App](https://aws-to-do-list.netlify.app/)
 * You can use the following credentials to sign in: 
   * Username: demo123 
-  * Password: password
+  * Password: password123
 
 ## Purpose of project
 * This is a simple app for me to practice new skills: 
